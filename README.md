@@ -10,7 +10,7 @@ git clone https://github.com/LastuvkaLukas/espidf-lora.git lora
 ```
 ## Default configuration
 
-All is configurable via `menuconfig` --> LoRa Configuration
+Everything can be configured using `menuconfig` --> LoRa Configuration
 * **Settings**
     * Frequency (`433MHz`)
     * Sync word (`0xFD`)
