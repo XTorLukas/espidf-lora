@@ -77,9 +77,10 @@ lora_end_tx(void);
 ...
 uint8_t buf[255];
 uint8_t len;
-lora_begin_rx(&len);
-lora_read_rx(uint8_t *buf, len);
-lora_end_tx(void);
+esp_err_t err = lora_begin_rx(&len);
+if(err == ESP_OK)
+    lora_read_rx(uint8_t *buf, len);
+lora_end_rx(void); // Switch to Standby mode (optional)
 ...
 ```
 
@@ -88,9 +89,10 @@ lora_end_tx(void);
 ...
 uint8_t buf[255];
 uint8_t len;
-lora_waiting_cad_rx(&len);
-lora_read_rx(uint8_t *buf, len);
-lora_end_tx(void);
+esp_err_t err = lora_waiting_cad_rx(&len);
+if(err == ESP_OK)
+    lora_read_rx(uint8_t *buf, len);
+lora_end_rx(void); // Switch to Standby mode (optional)
 ...
 ```
 
