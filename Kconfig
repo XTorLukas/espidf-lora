@@ -1,0 +1,197 @@
+menu "LoRa Configuration"
+    
+    menu "Settings"
+
+        config LORA_FREQ
+            int "Frequency"
+            default 433000000
+            help
+                Frequency in Hz.
+
+        config LORA_SYNC_WORD
+            hex "Sync word"
+            default 0xFD
+            help
+                Network ID.
+
+        config LORA_PREAMBLE_LEN
+            int "Preamble length"
+            default 255
+            help 
+                Preamble length.
+
+        config LORA_TX_POWER
+            int "TX power"
+            range 2 17
+            default 17
+            help 
+                TX power.
+
+        config LORA_INIT_TIMEOUT
+            int "Init timeout"
+            range 100 255
+            default 100
+            help 
+                Init timeout.
+
+        config LORA_RST_GPIO
+            int "RST GPIO"
+            range 0 35
+            default 27
+            help 
+                RST pin.
+
+    endmenu # Settings
+
+    menu "SPI Config"
+
+        choice LORA_SPI_SEL
+            bool "SPI Select"
+            default LORA_HSPI_ON
+            help 
+                SPI select.
+
+            config LORA_HSPI_ON
+                bool "HSPI"
+
+            config LORA_VSPI_ON
+                bool "VSPI"
+
+        endchoice
+
+        config LORA_MISO_GPIO
+            int "MISO GPIO"
+            range 0 35
+            default 12
+            help 
+                MISO pin.
+
+        config LORA_MOSI_GPIO
+            int "MOSI GPIO"
+            range 0 35
+            default 13
+            help 
+                MOSI pin.
+
+        config LORA_SCK_GPIO
+            int "SCK GPIO"
+            range 0 35
+            default 14
+            help 
+                SCK pin.
+
+        config LORA_CS_ON_GPIO
+            bool  "Enable CS GPIO"
+            default n
+            help 
+                Enable CS pin.
+
+        config LORA_CS_GPIO
+            int "CS GPIO"
+            depends on LORA_CS_ON_GPIO
+            range 0 35
+            default 15
+            help 
+                CS pin.
+
+    endmenu # SPI Config
+
+    menu "DIO 0-5 Config"
+
+        config LORA_DIO_ON_GPIO
+            bool "Enable DIO GPIOs"
+            default n
+            help
+                Enable DIO pins.
+
+        if LORA_DIO_ON_GPIO
+
+            config LORA_DIO0_ON_GPIO
+                bool  "Enable DIO0 GPIO"
+                default n
+                help 
+                    Enable DIO0 pin.
+
+            config LORA_DIO0_GPIO
+                int "DIO0 GPIO"
+                depends on LORA_DIO0_ON_GPIO
+                range 0 35
+                default 0
+                help 
+                    DIO0 pin.
+
+            config LORA_DIO1_ON_GPIO
+                bool  "Enable DIO1 GPIO"
+                default n
+                help 
+                    Enable DIO1 pin.
+
+            config LORA_DIO1_GPIO
+                int "DIO1 GPIO"
+                depends on LORA_DIO1_ON_GPIO
+                range 0 35
+                default 0
+                help 
+                    DIO1 pin.
+
+            config LORA_DIO2_ON_GPIO
+                bool  "Enable DIO2 GPIO"
+                default n
+                help 
+                    Enable DIO2 pin.
+
+            config LORA_DIO2_GPIO
+                int "DIO2 GPIO"
+                depends on LORA_DIO2_ON_GPIO
+                range 0 35
+                default 0
+                help 
+                    DIO2 pin.
+
+            config LORA_DIO3_ON_GPIO
+                bool  "Enable DIO3 GPIO"
+                default n
+                help 
+                    Enable DIO3 pin.
+
+            config LORA_DIO3_GPIO
+                int "DIO3 GPIO"
+                depends on LORA_DIO3_ON_GPIO
+                range 0 35
+                default 0
+                help 
+                    DIO3 pin.
+
+            config LORA_DIO4_ON_GPIO
+                bool  "Enable DIO4 GPIO"
+                default n
+                help 
+                    Enable DIO4 pin.
+
+            config LORA_DIO4_GPIO
+                int "DIO4 GPIO"
+                depends on LORA_DIO4_ON_GPIO
+                range 0 35
+                default 0
+                help 
+                    DIO4 pin.
+
+            config LORA_DIO5_ON_GPIO
+                bool  "Enable DIO5 GPIO"
+                default n
+                help 
+                    Enable DIO5 pin.
+
+            config LORA_DIO5_GPIO
+                int "DIO5 GPIO"
+                depends on LORA_DIO5_ON_GPIO
+                range 0 35
+                default 0
+                help 
+                    DIO5 pin.
+
+        endif # LORA_DIO_ON_GPIO
+
+    endmenu # DIO 0-5 Config
+
+endmenu # LoRa
