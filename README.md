@@ -8,6 +8,7 @@
 ```bash
 git clone https://github.com/LastuvkaLukas/espidf-lora.git lora
 ```
+
 ## Default configuration
 
 Everything can be configured using `menuconfig` --> LoRa Configuration
@@ -23,36 +24,36 @@ Everything can be configured using `menuconfig` --> LoRa Configuration
 ## Default conect GPIO
 
 ### Power
-LoRa™ module | ESP
----: | :--- 
-`GND` | `GND`
-`3V3` | `3V3`
-`RST` | `GPIO27`
+| LoRa™ module | ESP      |
+| -----------: | :------- |
+|        `GND` | `GND`    |
+|        `3V3` | `3V3`    |
+|        `RST` | `GPIO27` |
 
 ### SPI
 Compatible `HSPI` and `VSPI`
 
 Default select `HSPI`
 
-LoRa™ module | ESP
----: | :--- 
-`MISO` | `GPIO12`
-`MOSI` | `GPIO13`
-`SCK` | `GPIO14`
-`NSS` | `GPIO15` (_optional_)
+| LoRa™ module | ESP                   |
+| -----------: | :-------------------- |
+|       `MISO` | `GPIO12`              |
+|       `MOSI` | `GPIO13`              |
+|        `SCK` | `GPIO14`              |
+|        `NSS` | `GPIO15` (_optional_) |
 
 ### DIO pins
 
 Default dio pins disconnect
 
-LoRa™ module | ESP
----: | :--- 
-`DIO0` | `---` (_optional_)
-`DIO1` | `---` (_optional_)
-`DIO2` | `---` (_optional_)
-`DIO3` | `---` (_optional_)
-`DIO4` | `---` (_optional_)
-`DIO5` | `---` (_optional_)
+| LoRa™ module | ESP                |
+| -----------: | :----------------- |
+|       `DIO0` | `---` (_optional_) |
+|       `DIO1` | `---` (_optional_) |
+|       `DIO2` | `---` (_optional_) |
+|       `DIO3` | `---` (_optional_) |
+|       `DIO4` | `---` (_optional_) |
+|       `DIO5` | `---` (_optional_) |
 
 ## Examples
 First init LoRa™ module
@@ -96,4 +97,4 @@ lora_end_rx(void); // Switch to Standby mode (optional)
 ...
 ```
 
-*Copyright (c) 2023 Laštůvka Lukáš*
+_Copyright (c) 2023 Laštůvka Lukáš_
