@@ -69,7 +69,7 @@ if(err != ESP_OK)
 lora_begin_tx();
 uint8_t buf[] = "data";
 uint8_t size = sizeof(buf);
-lora_write_tx(uint8_t *buf, uint8_t size);
+lora_write_tx(uint8_t &buf, uint8_t size);
 lora_end_tx(void);
 ...
 ```
@@ -80,7 +80,7 @@ uint8_t buf[255];
 uint8_t len;
 esp_err_t err = lora_begin_rx(&len);
 if(err == ESP_OK)
-    lora_read_rx(uint8_t *buf, len);
+    lora_read_rx(uint8_t &buf, len);
 lora_end_rx(void); // Switch to Standby mode (optional)
 ...
 ```
@@ -92,7 +92,7 @@ uint8_t buf[255];
 uint8_t len;
 esp_err_t err = lora_waiting_cad_rx(&len);
 if(err == ESP_OK)
-    lora_read_rx(uint8_t *buf, len);
+    lora_read_rx(uint8_t &buf, len);
 lora_end_rx(void); // Switch to Standby mode (optional)
 ...
 ```
