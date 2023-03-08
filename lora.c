@@ -479,6 +479,30 @@ void lora_waiting_cad(void)
 }
 
 /**
+ * Test a CAD to be detected.
+ */
+bool lora_is_cad_detected(void)
+{
+   lora_set_mode(LORA_OP_MODE_CAD);
+
+   uint8_t read;
+
+   for (;;)
+   {
+      read = lora_read_reg(LORA_REG_IRQ_FLAGS);
+      if (read & LORA_IRQ_FLAGS_CAD_DONE)
+      {
+         if (read & LORA_IRQ_FLAGS_CAD_DETECTED)
+         {
+            ESP_LOGI(TAG, "CAD detected");
+            return true;
+         }
+         return false;
+      }
+   }
+}
+
+/**
  * Starts the LoRa module in receive mode after CAD detection.
  *
  * @returns ESP_OK if the operation was successful, ESP_FAIL otherwise.

@@ -130,6 +130,11 @@ void lora_end_rx(void);
 void lora_waiting_cad(void);
 
 /**
+ * Test a CAD to be detected.
+ */
+bool lora_is_cad_detected(void);
+
+/**
  * Starts the LoRa module in receive mode after CAD detection.
  *
  * @returns ESP_OK if the operation was successful, ESP_FAIL otherwise.
