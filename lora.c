@@ -475,7 +475,7 @@ void lora_waiting_cad(void)
 
       vTaskDelay(2);
    }
-   ESP_LOGI(TAG, "CAD detected");
+   ESP_LOGD(TAG, "CAD detected");
 }
 
 /**
@@ -494,7 +494,7 @@ bool lora_is_cad_detected(void)
       {
          if (read & LORA_IRQ_FLAGS_CAD_DETECTED)
          {
-            ESP_LOGI(TAG, "CAD detected");
+            ESP_LOGD(TAG, "CAD detected");
             return true;
          }
          return false;
