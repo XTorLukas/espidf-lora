@@ -119,7 +119,7 @@ typedef enum lora_reg_dio_num_t
 typedef enum lora_reg_dio_mode_t
 {
     LORA_DIO_SET = 0,
-    LORA_DIO_CLEAR = 0,
+    LORA_DIO_CLEAR = 1,
 } lora_reg_dio_mode_t;
 
 #endif
