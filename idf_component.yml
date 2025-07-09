@@ -1,3 +1,4 @@
+name: lora
 version: "1.0.1"
 description: LoRa driver for SX1278
 url: https://github.com/XTorLukas/espidf-lora/tree/master
