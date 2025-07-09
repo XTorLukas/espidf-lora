@@ -57,6 +57,12 @@ menu "LoRa Configuration"
             config LORA_VSPI_ON
                 bool "VSPI"
 
+            config LORA_SPI2_ON
+                bool "SPI2"
+
+            config LORA_SPI3_ON
+                bool "SPI3"
+
         endchoice
 
         config LORA_MISO_GPIO
