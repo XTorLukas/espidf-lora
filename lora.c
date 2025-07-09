@@ -44,6 +44,10 @@
 #define LORA_SPI HSPI_HOST
 #elif CONFIG_LORA_VSPI_ON
 #define LORA_SPI VSPI_HOST
+#elif CONFIG_LORA_SPI2_ON
+#define LORA_SPI SPI2_HOST
+#elif CONFIG_LORA_SPI3_ON
+#define LORA_SPI SPI3_HOST
 #else
 #error "No selected LORA_SPI"
 #define LORA_SPI
