@@ -36,6 +36,7 @@
 #define __ESP_LORA_H__
 
 #include <esp_err.h>
+#include <stdbool.h>
 #include "lora_reg.h"
 
 /**
