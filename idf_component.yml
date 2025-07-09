@@ -1,0 +1,11 @@
+version: "1.0.1"
+description: LoRa driver for SX1278
+url: https://github.com/XTorLukas/espidf-lora
+repository: https://github.com/XTorLukas/espidf-lora.git
+issues: https://github.com/XTorLukas/espidf-lora/issues
+dependencies:
+  idf: ">=4.0"
+  cmake_utilities: "*"
+sbom:
+  supplier: 'Laštůvka Lukáš'
+  originator: 'Laštůvka Lukáš'
